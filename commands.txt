@@ -1,0 +1,2 @@
+#runs the quotes spider and outputs to a json lines file
+scrapy crawl quotes -o quotes.jl
