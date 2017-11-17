@@ -1,2 +1,5 @@
-#runs the quotes spider and outputs to a json lines file
+# Runs the quotes spider and outputs to a json lines file
 scrapy crawl quotes -o quotes.jl
+
+# Scrapy shell for exploration
+scrapy shell "https://twitter.com/realDonaldTrump"

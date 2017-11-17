@@ -4,14 +4,11 @@ import scrapy
 class QuotesSpider(scrapy.Spider):
     name = "quotes"
     start_urls = [
-        'http://quotes.toscrape.com/page/1/',
-        'http://quotes.toscrape.com/page/2/',
+        'https://twitter.com/realDonaldTrump',
     ]
 
     def parse(self, response):
-        for quote in response.css("div.quote"):
+        for tweet in response.css("div.tweet"):
             yield {
-                'text': quote.css('span.text::text').extract(),
-                'author': quote.css('small.author::text').extract(),
-                'tags': quote.css('div.tags a.tag::text').extract(),
+                'text': tweet.css('p.tweet-text::text').extract(),
             }
